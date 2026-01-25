@@ -1,0 +1,96 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f9;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #0d47a1;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  transition: all 0.35s ease;
+  overflow-y: auto;
+}
+
+.sidebar.collapsed {
+  width: 85px;
+}
+
+.sidebar .logo {
+  width: 50px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.sidebar.collapsed .logo {
+  width: 40px;
+}
+
+.sidebar .app-title {
+  font-size: 15px;
+  transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .app-title {
+  opacity: 0;
+  width: 0;
+}
+
+.sidebar .components a {
+  color: #ffffffcc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: 0.2s;
+}
+
+.sidebar .components a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-left: 3px solid #fff;
+}
+
+.sidebar.collapsed .components a span {
+  display: none;
+}
+
+.sidebar .toggle-btn {
+  background: transparent;
+  color: #0d47a1;
+  border-radius: 6px;
+}
+
+#content {
+  margin-left: 260px;
+  transition: margin-left 0.35s ease;
+}
+
+.sidebar.collapsed ~ #content {
+  margin-left: 85px;
+}
+
+/* CARDS */
+.card-feature {
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.card-feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* SMOOTH SCROLLBAR */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
